@@ -1,0 +1,30 @@
+[
+
+  { "option": "U260731P00028500",    "expiry": "2026-07-31", "type": "Put",  "strike": 28.50,  "close": 31.72,  "assigned": "No" },
+  { "option": "DPST260731P00137000", "expiry": "2026-07-31", "type": "Put",  "strike": 137.00, "close": 146.04, "assigned": "No" },
+  { "option": "T260731P00037000",    "expiry": "2026-07-31", "type": "Put",  "strike": 37.00,  "close": 37.27,  "assigned": "No" },
+  { "option": "ZETA260724P00020500", "expiry": "2026-07-24", "type": "Put",  "strike": 20.50,  "close": 19.13,  "assigned": "Yes" },
+  { "option": "LW260724P00045000",   "expiry": "2026-07-24", "type": "Put",  "strike": 45.00,  "close": 49.64,  "assigned": "No" },
+  { "option": "LW260724P00044000",   "expiry": "2026-07-24", "type": "Put",  "strike": 44.00,  "close": 49.64,  "assigned": "No" },
+  { "option": "LW260724P00043000",   "expiry": "2026-07-24", "type": "Put",  "strike": 43.00,  "close": 49.64,  "assigned": "No" },
+  { "option": "RNG260724P00035000",  "expiry": "2026-07-24", "type": "Put",  "strike": 35.00,  "close": 48.36,  "assigned": "No" },
+  { "option": "LW260724P00042000",   "expiry": "2026-07-24", "type": "Put",  "strike": 42.00,  "close": 49.64,  "assigned": "No" },
+  { "option": "LW260724P00041000",   "expiry": "2026-07-24", "type": "Put",  "strike": 41.00,  "close": 49.64,  "assigned": "No" },
+
+
+  { "option": "CMG260731C00037000",  "expiry": "2026-07-31", "type": "Call", "strike": 37.00,  "close": 37.24,  "assigned": "Yes" },
+  { "option": "VFC260731C00019500",  "expiry": "2026-07-31", "type": "Call", "strike": 19.50,  "close": 14.48,  "assigned": "No" },
+  { "option": "BTU260731C00025000",  "expiry": "2026-07-31", "type": "Call", "strike": 25.00,  "close": 21.32,  "assigned": "No" },
+  { "option": "KTOS260731C00054000", "expiry": "2026-07-31", "type": "Call", "strike": 54.00,  "close": 46.60,  "assigned": "No" },
+  { "option": "UPST260731C00030500", "expiry": "2026-07-31", "type": "Call", "strike": 30.50,  "close": 27.44,  "assigned": "No" },
+  { "option": "TNA260731C00072000",  "expiry": "2026-07-31", "type": "Call", "strike": 72.00,  "close": 67.60,  "assigned": "No" },
+  { "option": "USO260731C00133000",  "expiry": "2026-07-31", "type": "Call", "strike": 133.00, "close": 129.17, "assigned": "No" },
+  { "option": "LW260724C00050000",   "expiry": "2026-07-24", "type": "Call", "strike": 50.00,  "close": 49.64,  "assigned": "No" },
+  { "option": "IOT260724C00040000",  "expiry": "2026-07-24", "type": "Call", "strike": 40.00,  "close": 33.11,  "assigned": "No" },
+  { "option": "RNG260724C00044000",  "expiry": "2026-07-24", "type": "Call", "strike": 44.00,  "close": 48.36,  "assigned": "Yes" },
+  { "option": "LW260724C00051000",   "expiry": "2026-07-24", "type": "Call", "strike": 51.00,  "close": 49.64,  "assigned": "No" },
+  { "option": "HOG260724C00030000",  "expiry": "2026-07-24", "type": "Call", "strike": 30.00,  "close": 25.50,  "assigned": "No" },
+  { "option": "GTLB260724C00034500", "expiry": "2026-07-24", "type": "Call", "strike": 34.50,  "close": 31.28,  "assigned": "No" },
+  { "option": "DPST260724C00153000", "expiry": "2026-07-24", "type": "Call", "strike": 153.00, "close": 144.32, "assigned": "No" },
+  { "option": "DPST260724C00154000", "expiry": "2026-07-24", "type": "Call", "strike": 154.00, "close": 144.32, "assigned": "No" }
+]
