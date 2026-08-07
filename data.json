@@ -13,8 +13,8 @@
   {"option":"HOG260724C00030000","expiry":"2026-07-24","type":"Call","strike":30,"close":25.5,"assigned":"No"},
   {"option":"GTLB260724C00034500","expiry":"2026-07-24","type":"Call","strike":34.5,"close":31.28,"assigned":"No"},
   {"option":"DPST260724C00153000","expiry":"2026-07-24","type":"Call","strike":153,"close":144.32,"assigned":"No"},
-  {"option":"DPST260724C00154000","expiry":"2026-07-24","type":"Call","strike":154,"close":144.32,"assigned":"No"}
-  {"option":"LUV260807C00048000","expiry":"2026-08-07","type":"Call","strike":48,"close":47.05,"assigned":"No"}
-  {"option":"CORZ260807C00024500","expiry":"2026-08-07","type":"Call","strike":24.50,"close":21.01,"assigned":"No"}
+  {"option":"DPST260724C00154000","expiry":"2026-07-24","type":"Call","strike":154,"close":144.32,"assigned":"No"},
+  {"option":"LUV260807C00048000","expiry":"2026-08-07","type":"Call","strike":48,"close":47.05,"assigned":"No"},
+  {"option":"CORZ260807C00024500","expiry":"2026-08-07","type":"Call","strike":24.50,"close":21.01,"assigned":"No"},
   {"option":"XBI260807C00150000","expiry":"2026-08-07","type":"Call","strike":150,"close":157.37,"assigned":"Yes"}
 ]
