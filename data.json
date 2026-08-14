@@ -1,4 +1,7 @@
 [
+  {"option":"FIG260814C00025000","expiry":"2026-08-14","type":"Call","strike":25,"close":25.53,"assigned":"Yes"},
+  {"option":"CELH260814C00029500","expiry":"2026-08-14","type":"Call","strike":29.5,"close":29.09,"assigned":"No"},
+  {"option":"USO260814C00125000","expiry":"2026-08-14","type":"Call","strike":125,"close":126.30,"assigned":"Yes"},
   {"option":"LUV260807C00048000","expiry":"2026-08-07","type":"Call","strike":48,"close":47.05,"assigned":"No"},
   {"option":"CORZ260807C00024500","expiry":"2026-08-07","type":"Call","strike":24.50,"close":21.01,"assigned":"No"},
   {"option":"XBI260807C00150000","expiry":"2026-08-07","type":"Call","strike":150,"close":157.37,"assigned":"Yes"},
