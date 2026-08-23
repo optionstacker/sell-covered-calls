@@ -71,11 +71,11 @@
   section.summary {
     margin-top: 40px;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1px;
     background: var(--rule);
     border: 1px solid var(--rule);
-    max-width: 320px;
+    max-width: 640px;
   }
 
   .summary-card {
@@ -104,6 +104,10 @@
     margin: 0;
     font-size: 12px;
     color: var(--ink-soft);
+  }
+
+  @media (max-width: 640px) {
+    section.summary { grid-template-columns: 1fr; max-width: 320px; }
   }
 
   section.book {
@@ -204,6 +208,12 @@
   .pill.yes { background: var(--amber); color: #fff; }
   .pill.no { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule); }
 
+  .pill.risk { background: var(--rust); color: #fff; }
+  .pill.safe { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule); }
+
+  td.drop-neg { color: var(--rust); font-weight: 600; }
+  td.drop-pos { color: var(--ink-soft); }
+
   footer {
     max-width: 980px;
     margin: 64px auto 0;
@@ -225,14 +235,19 @@
 <header>
   <p class="eyebrow">Written / Sold Options — Settlement Record</p>
   <h1>Covered Calls</h1>
-  <p class="sub">Covered calls were initially OTM. A call finishes in-the-money when the close sits at or above the strike.</p>
+  <p class="sub">Covered calls were initially OTM. The real risk isn't assignment — it's an unassigned call where the stock drops sharply before expiry, since that erases the premium collected. "Initial Price" is the stock's close on the Monday before expiry week; a drop of 5% or more from that price, on a call that was <em>not</em> assigned, is flagged below.</p>
 </header>
 
 <main>
 
   <section class="summary" id="summary-section">
+    <div class="summary-card" id="summary-risk">
+      <p class="summary-label">Premium at Risk</p>
+      <p class="summary-pct" id="summary-risk-pct">—</p>
+      <p class="summary-detail" id="summary-risk-detail">—</p>
+    </div>
     <div class="summary-card" id="summary-calls">
-      <p class="summary-label">Covered Calls</p>
+      <p class="summary-label">Covered Calls ITM%</p>
       <p class="summary-pct" id="summary-calls-pct">—</p>
       <p class="summary-detail" id="summary-calls-detail">—</p>
     </div>
@@ -249,11 +264,12 @@
           <th>Ticker</th>
           <th>Option</th>
           <th>Strike Date</th>
-          <th>Type</th>
           <th class="num">Strike</th>
+          <th class="num">Initial Price</th>
           <th class="num">Close</th>
-          <th>ITM?</th>
+          <th class="num">Drop %</th>
           <th>Assigned</th>
+          <th>Risk</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -263,7 +279,7 @@
 </main>
 
 <footer>
-  ITM = In-The-Money at expiry (close ≥ strike). OTM = Out-Of-Money
+  "Drop %" is the change from the stock's close on the Monday before expiry week to the close on expiry day. A call is <strong>Flagged</strong> when it was <em>not</em> assigned and the stock dropped 5% or more over that window — the case where the premium collected likely didn't offset the paper loss. ITM = In-The-Money at expiry (close ≥ strike). OTM = Out-Of-Money.
 </footer>
 
 <script>
@@ -282,36 +298,47 @@
     const rows = positions.filter(p => p.type === type);
     const tbody = document.querySelector(tbodyId + " tbody");
     let itmCount = 0;
+    let riskCount = 0;
 
     rows.forEach(p => {
       const isITM = p.close >= p.strike;
       if (isITM) itmCount++;
+
+      const dropPct = ((p.initial_price - p.close) / p.initial_price) * 100; // positive = price fell
+      const isBigDrop = dropPct >= 5;
+      const notAssigned = p.assigned !== "Yes";
+      const isRisk = isBigDrop && notAssigned;
+      if (isRisk) riskCount++;
+
+      const dropClass = dropPct > 0 ? "drop-neg" : "drop-pos";
+      const dropLabel = (dropPct > 0 ? "-" : "+") + Math.abs(dropPct).toFixed(1) + "%";
 
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td class="ticker">${tickerFromOption(p.option)}</td>
         <td>${p.option}</td>
         <td>${p.expiry}</td>
-        <td>${p.type}</td>
         <td class="num">${fmt(p.strike)}</td>
+        <td class="num">${fmt(p.initial_price)}</td>
         <td class="num">${fmt(p.close)}</td>
-        <td><span class="pill ${isITM ? 'itm' : 'otm'}">${isITM ? "Yes" : "No"}</span></td>
+        <td class="num ${dropClass}">${dropLabel}</td>
         <td><span class="pill ${p.assigned === 'Yes' ? 'yes' : 'no'}">${p.assigned}</span></td>
+        <td><span class="pill ${isRisk ? 'risk' : 'safe'}">${isRisk ? "Flagged" : "OK"}</span></td>
       `;
       tbody.appendChild(tr);
     });
 
-    const pct = rows.length ? (itmCount / rows.length * 100) : 0;
+    const itmPct = rows.length ? (itmCount / rows.length * 100) : 0;
+    const riskPct = rows.length ? (riskCount / rows.length * 100) : 0;
     document.querySelector(statId).innerHTML =
-      `<strong class="good">${pct.toFixed(1)}%</strong>ITM at expiry (${itmCount} of ${rows.length})`;
+      `<strong class="good">${itmPct.toFixed(1)}%</strong>ITM at expiry (${itmCount} of ${rows.length})`;
 
-    return { count: rows.length, itmCount, pct };
+    return { count: rows.length, itmCount, itmPct, riskCount, riskPct };
   }
 
-  function fillSummaryCard(prefix, stats) {
-    document.querySelector(`#summary-${prefix}-pct`).textContent = `${stats.pct.toFixed(1)}%`;
-    document.querySelector(`#summary-${prefix}-detail`).textContent =
-      `${stats.itmCount} of ${stats.count} finished ITM`;
+  function fillSummaryCard(prefix, pct, detail) {
+    document.querySelector(`#summary-${prefix}-pct`).textContent = `${pct.toFixed(1)}%`;
+    document.querySelector(`#summary-${prefix}-detail`).textContent = detail;
   }
 
   async function init() {
@@ -329,7 +356,9 @@
     }
 
     const callStats = render("Call", "#calls-table", "#calls-stat");
-    fillSummaryCard("calls", callStats);
+
+    fillSummaryCard("risk", callStats.riskPct, `${callStats.riskCount} of ${callStats.count} calls: unassigned + drop ≥5%`);
+    fillSummaryCard("calls", callStats.itmPct, `${callStats.itmCount} of ${callStats.count} finished ITM`);
   }
 
   init();
