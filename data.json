@@ -1,4 +1,7 @@
 [
+  {"option":"RBRK260904C00095000","expiry":"2026-09-04","type":"Call","strike":95,"initial_price":93.04,"close":94.48,"assigned":"No"},
+  {"option":"AFRM260904C00076000","expiry":"2026-09-04","type":"Call","strike":76,"initial_price":74.45,"close":72.35,"assigned":"No"},
+  {"option":"GDX260904C00103000","expiry":"2026-09-04","type":"Call","strike":103,"initial_price":98.51,"close":99.26,"assigned":"No"},
   {"option":"CVNA260828C00075000","expiry":"2026-08-28","type":"Call","strike":75,"initial_price":72.33,"close":74.04,"assigned":"No"},
   {"option":"UPST260828C00031500","expiry":"2026-08-28","type":"Call","strike":31.5,"initial_price":30.30,"close":29.07,"assigned":"No"},
   {"option":"GDXJ260828C00141000","expiry":"2026-08-28","type":"Call","strike":141,"initial_price":133.58,"close":128.85,"assigned":"No"},
