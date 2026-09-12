@@ -1,4 +1,7 @@
 [
+  {"option":"HPE260911C00056000","expiry":"2026-09-11","type":"Call","strike":56,"initial_price":54.03,"close":60.23,"assigned":"Yes"},
+  {"option":"CELH260911C00032000","expiry":"2026-09-11","type":"Call","strike":32,"initial_price":29.56,"close":27.22,"assigned":"No"},
+  {"option":"DPST260911C00144000","expiry":"2026-09-11","type":"Call","strike":144,"initial_price":133.71,"close":131.19,"assigned":"No"},
   {"option":"RBRK260904C00095000","expiry":"2026-09-04","type":"Call","strike":95,"initial_price":93.04,"close":94.48,"assigned":"No"},
   {"option":"AFRM260904C00076000","expiry":"2026-09-04","type":"Call","strike":76,"initial_price":74.45,"close":72.35,"assigned":"No"},
   {"option":"GDX260904C00103000","expiry":"2026-09-04","type":"Call","strike":103,"initial_price":98.51,"close":99.26,"assigned":"No"},
