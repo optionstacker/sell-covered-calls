@@ -235,7 +235,7 @@
 <header>
   <p class="eyebrow">Written / Sold Options — Settlement Record</p>
   <h1>Covered Calls</h1>
-  <p class="sub">Covered calls were initially OTM. The real risk isn't assignment — it's an unassigned call where the stock drops sharply before expiry, since that erases the premium collected. "Initial Price" is the stock's close on the Monday before expiry week; a drop of 5% or more from that price, on a call that was <em>not</em> assigned, is flagged below.</p>
+  <p class="sub">Covered calls were initially OTM. The real risk isn't assignment — it's an unassigned call where the stock drops sharply before expiry, since that erases the premium collected. "Initial Price" is the stock's close on the Monday before expiry week; a drop of 10% or more from that price, on a call that was <em>not</em> assigned, is flagged below.</p>
 </header>
 
 <main>
@@ -279,7 +279,7 @@
 </main>
 
 <footer>
-  "Drop %" is the change from the stock's close on the Monday before expiry week to the close on expiry day. A call is <strong>Flagged</strong> when it was <em>not</em> assigned and the stock dropped 5% or more over that window — the case where the premium collected likely didn't offset the paper loss. ITM = In-The-Money at expiry (close ≥ strike). OTM = Out-Of-Money.
+  "Drop %" is the change from the stock's close on the Monday before expiry week to the close on expiry day. A call is <strong>Flagged</strong> when it was <em>not</em> assigned and the stock dropped 10% or more over that window — the case where the premium collected likely didn't offset the paper loss. ITM = In-The-Money at expiry (close ≥ strike). OTM = Out-Of-Money.
 </footer>
 
 <script>
@@ -305,7 +305,7 @@
       if (isITM) itmCount++;
 
       const dropPct = ((p.initial_price - p.close) / p.initial_price) * 100; // positive = price fell
-      const isBigDrop = dropPct >= 5;
+      const isBigDrop = dropPct >= 10;
       const notAssigned = p.assigned !== "Yes";
       const isRisk = isBigDrop && notAssigned;
       if (isRisk) riskCount++;
@@ -357,7 +357,7 @@
 
     const callStats = render("Call", "#calls-table", "#calls-stat");
 
-    fillSummaryCard("risk", callStats.riskPct, `${callStats.riskCount} of ${callStats.count} calls: unassigned + drop ≥5%`);
+    fillSummaryCard("risk", callStats.riskPct, `${callStats.riskCount} of ${callStats.count} calls: unassigned + drop ≥10%`);
     fillSummaryCard("calls", callStats.itmPct, `${callStats.itmCount} of ${callStats.count} finished ITM`);
   }
 
