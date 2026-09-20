@@ -1,4 +1,9 @@
 [
+  {"option":"CVNA260918C00074000","expiry":"2026-09-18","type":"Call","strike":74,"initial_price":70.87,"close":65.11,"assigned":"No"},
+  {"option":"SWKS260918C00090000","expiry":"2026-09-18","type":"Call","strike":90,"initial_price":79.26,"close":88.76,"assigned":"No"},
+  {"option":"AGQ260918C00078000","expiry":"2026-09-18","type":"Call","strike":78,"initial_price":73.44,"close":81.48,"assigned":"Yes"},
+  {"option":"KRMN260918C00040000","expiry":"2026-09-18","type":"Call","strike":40,"initial_price":36.94,"close":35.75,"assigned":"No"},
+  {"option":"VRNS260918C00050000","expiry":"2026-09-18","type":"Call","strike":50,"initial_price":46.76,"close":47.56,"assigned":"No"},
   {"option":"HPE260911C00056000","expiry":"2026-09-11","type":"Call","strike":56,"initial_price":54.03,"close":60.23,"assigned":"Yes"},
   {"option":"CELH260911C00032000","expiry":"2026-09-11","type":"Call","strike":32,"initial_price":29.56,"close":27.22,"assigned":"No"},
   {"option":"DPST260911C00144000","expiry":"2026-09-11","type":"Call","strike":144,"initial_price":133.71,"close":131.19,"assigned":"No"},
