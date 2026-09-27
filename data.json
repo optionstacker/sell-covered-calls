@@ -1,4 +1,9 @@
 [
+  {"option":"OKLO260925C00042000","expiry":"2026-09-25","type":"Call","strike":42,"initial_price":40.18,"close":38.04,"assigned":"No"},
+  {"option":"RKLB260925C00074000","expiry":"2026-09-25","type":"Call","strike":74,"initial_price":70.31,"close":73.95,"assigned":"No"},
+  {"option":"AGQ260925C00088000","expiry":"2026-09-25","type":"Call","strike":88,"initial_price":76.65,"close":76.66,"assigned":"No"},
+  {"option":"OSCR260925C00032500","expiry":"2026-09-25","type":"Call","strike":32.5,"initial_price":30.53,"close":29.60,"assigned":"No"},
+  {"option":"RKLB260925C00075000","expiry":"2026-09-25","type":"Call","strike":75,"initial_price":70.31,"close":73.95,"assigned":"No"},
   {"option":"CVNA260918C00074000","expiry":"2026-09-18","type":"Call","strike":74,"initial_price":70.87,"close":65.11,"assigned":"No"},
   {"option":"SWKS260918C00090000","expiry":"2026-09-18","type":"Call","strike":90,"initial_price":79.26,"close":88.76,"assigned":"No"},
   {"option":"AGQ260918C00078000","expiry":"2026-09-18","type":"Call","strike":78,"initial_price":73.44,"close":81.48,"assigned":"Yes"},
