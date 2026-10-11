@@ -1,4 +1,9 @@
 [
+  {"option":"DOCN261009C00150000","expiry":"2026-10-09","type":"Call","strike":150,"initial_price":137.23,"close":134.82,"assigned":"No"},
+  {"option":"OKLO261009C00041500","expiry":"2026-10-09","type":"Call","strike":41.5,"initial_price":35.97,"close":34.70,"assigned":"No"},
+  {"option":"INOD261009C00075000","expiry":"2026-10-09","type":"Call","strike":75,"initial_price":66.97,"close":62.04,"assigned":"No"},
+  {"option":"RKLB261009C00080000","expiry":"2026-10-09","type":"Call","strike":80,"initial_price":73.02,"close":68.21,"assigned":"No"},
+  {"option":"DPST261009C00120000","expiry":"2026-10-09","type":"Call","strike":120,"initial_price":113.78,"close":107.20,"assigned":"No"},
   {"option":"IONQ261002C00050000","expiry":"2026-10-02","type":"Call","strike":50,"initial_price":44.58,"close":43.77,"assigned":"No"}, 
   {"option":"INOD261002C00075000","expiry":"2026-10-02","type":"Call","strike":75,"initial_price":66.79,"close":70.07,"assigned":"No"}, 
   {"option":"BNO261002C00063000","expiry":"2026-10-02","type":"Call","strike":63,"initial_price":60.33,"close":63.10,"assigned":"Yes"},
