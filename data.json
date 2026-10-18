@@ -1,4 +1,7 @@
 [
+  {"option":"NOW261016C00152500","expiry":"2026-10-16","type":"Call","strike":152.5,"initial_price":140.32,"close":141.97,"assigned":"No"},
+  {"option":"AKAM261016C00110000","expiry":"2026-10-16","type":"Call","strike":110,"initial_price":101.65,"close":87.81,"assigned":"No"},
+  {"option":"TECL261016C00250000","expiry":"2026-10-16","type":"Call","strike":250,"initial_price":233.13,"close":188.71,"assigned":"No"},
   {"option":"DOCN261009C00150000","expiry":"2026-10-09","type":"Call","strike":150,"initial_price":137.23,"close":134.82,"assigned":"No"},
   {"option":"OKLO261009C00041500","expiry":"2026-10-09","type":"Call","strike":41.5,"initial_price":35.97,"close":34.70,"assigned":"No"},
   {"option":"INOD261009C00075000","expiry":"2026-10-09","type":"Call","strike":75,"initial_price":66.97,"close":62.04,"assigned":"No"},
